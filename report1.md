@@ -37,6 +37,7 @@ The command tries to `cd` into the temp.md document, but since `cd` means
 "change directory", and temp.md is not a directory, the command errors out and returns 
 the error message on the second line
 
+
 ## ls
 
 ### No Argument
@@ -76,3 +77,44 @@ Working directory: `~/Documents/`
 
 The command lists the file passed in as the argument, `temp.md`, which it does, 
 and is not an error.
+
+
+## cat
+
+### No Argument:
+
+```
+[zsz@fedora ~]$ cat
+
+```
+
+Working directory: home (`~`)
+
+Since there is no argument passed in, it does not know what file to run on, so 
+it just returns a blank line and is stuck there. If anything is passed into that
+blank line, it just returns it in a new line, but still does not terminate the
+program unless the user terminates it with `Ctrl` + `C` keyboard shortcut. This
+is probably not an error since the program does not terminate automatically
+
+### Path to Directory
+
+```
+[zsz@fedora ~]$ cat Documents/
+cat: Documents/: Is a directory
+```
+Working directory: home (`~`)
+
+Since `cat` is intended to be used on files, it errors out and tells you that
+you cannot use `cat` on a directory before self-terminating
+
+### Path to File
+
+```
+[zsz@fedora Documents]$ cat temp.md 
+temp file
+```
+
+Working directory: `~/Documents/`
+
+Running `cat` on the file returns the string contained in the file, which is
+just _temp file_, as intended
