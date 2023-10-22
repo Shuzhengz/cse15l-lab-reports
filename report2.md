@@ -72,3 +72,20 @@ is in string. The last argument is the value itself, which in this case is
 
 The value of the string `ArrayList` was changed, as the program stores the value
 inside it.
+
+
+### Example 2
+
+![Example_Image_2](report2_images/Screenshot%20from%202023-10-22%2016-05-51.png)
+
+Starting off from the last example, I used `/add-message` and added another value, 
+`hello_again_again`, to the server, and then I entered the URL for the index 
+page with no arguments. The method `handleRequest()` was called once again, and
+with no argument, it proceeded with the default case of just outputting the 
+stored values, which also uses the `formatToDisplay()` method.
+
+No relevant arguments or values was passed in this time, and no values changed 
+to this specific URL shown in picture. In the previous URL that I used to add 
+the third value (`http://localhost:4000/add-message?s=hello_again_again`), the
+process is the same with example 1.
+
