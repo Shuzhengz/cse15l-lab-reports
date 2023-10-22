@@ -89,3 +89,16 @@ to this specific URL shown in picture. In the previous URL that I used to add
 the third value (`http://localhost:4000/add-message?s=hello_again_again`), the
 process is the same with example 1.
 
+## Part 2
+
+### Path to private key:
+
+![Private_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-18.png)
+
+### Path to public key:
+
+![Public_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-46.png)
+
+### Logging into `ieng6` with ssh:
+
+![login](report2_images/Screenshot%20from%202023-10-22%2016-32-12.png)
