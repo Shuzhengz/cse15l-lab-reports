@@ -102,3 +102,12 @@ process is the same with example 1.
 ### Logging into `ieng6` with ssh:
 
 ![login](report2_images/Screenshot%20from%202023-10-22%2016-32-12.png)
+
+## Part 3
+
+I did not know that the `ieng6` server was not compliant with the more modern
+protocol that my system's `ssh` is running with. I use Fedora 36, and the `ssh`
+on the system by default would not connect to the server, and I had to enable 
+legacy features manually to add the ucsd server and fingerprint to the known 
+host list, which I did not know how to do. But fortunately after a bit of 
+digging around on Google, I managed to resolve the issue.
