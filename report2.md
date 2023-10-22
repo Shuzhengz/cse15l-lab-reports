@@ -53,3 +53,22 @@ class StringServer {
     }
 }
 ```
+
+### Example 1
+
+![Example_Image_1](report2_images/Screenshot%20from%202023-10-22%2016-05-36.png)
+
+Here the program called the `handleRequest()` method to run through the url
+provided. It adds the string _hello_ the first time and then _hello_again_ the
+second time (which is the url shown in the picture). The method then calls the
+private method `formatToDisplay()` to format the values stored inside the 
+string arraylist that I use to store values, an then returns them to be 
+displayed on screen.
+
+The relevant argument to the method would be the `?` character in the url, which
+means that it wants to run a query; and the `s` character, which means the query
+is in string. The last argument is the value itself, which in this case is
+`hello_again`, as it is after the `=` character.
+
+The value of the string `ArrayList` was changed, as the program stores the value
+inside it.
