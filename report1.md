@@ -7,7 +7,9 @@
 
 Working directory: home (`~` or `/home/zsz/`)
 
-There is no argument passed in, so the command will cd into nothing
+There is no argument passed in, so the command will cd into nothing. However, if
+the working directory is not home, then it will chenge the working directory to
+home.
 
 Not an error, it did what it's told to do, which is nothing
 
