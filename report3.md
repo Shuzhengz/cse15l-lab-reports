@@ -129,8 +129,8 @@ I found the commands using the `man grep` and `grep --help` commands, and its
 
 The `-H` flag is the same as `--with-filename`, which prints file names with output lines
 
-For example, running the command for word _"observational"_ in all `.txt` files in `technical/plos`
-gives:
+For example, running the command for word _"observational"_ in all `.txt` files in 
+`technical/plos` gives:
 
 ```
 [zsz@fedora technical]$ grep -H "observational" plos/*.txt
@@ -208,10 +208,13 @@ extra linex above and below blocks of text that contains mutiple of the same wor
         findings could necessitate further costly testing and hinder a chemical from reaching the
 ```
 
+This command is very useful in finding the context of the word being used
+
 ### `grep -L` command
 
 The `-L` flag is the same as `--files-without-match`, which prints only names of FILEs with no 
-selected line
+selected line.
+The command is very useful in finding files that are missing certain words
 
 For example, running the `-L` flag on all `.txt` in `plos/` with the word _"this"_ gives all the 
 files that do not contain the word:
@@ -243,7 +246,8 @@ plos/pmed.0020226.txt
 plos/pmed.0020274.txt
 ```
 
-would give all files that does not contain the character _"x"_
+would give all files that does not contain the character _"x"_. To narraow the search down to 
+exact words, use the `-w` flag in front of the word to be searched
 
 ### `grep -l`
 
@@ -279,7 +283,9 @@ plos/pmed.0020150.txt
 plos/pmed.0020246.txt
 ```
 
-Note that I used the `-w` flag here that limits the search to only files that contain _"observation"_ as its own word
+Note that I used the `-w` flag here that limits the search to only files that contain 
+_"observation"_ as its own word, this is useful because sometimes only the exact word is wanted 
+in a search
 
 We can also run the same command but with `pmed.*.txt`
 
@@ -295,4 +301,5 @@ plos/pmed.0020150.txt
 plos/pmed.0020246.txt
 ```
 
-It narrows the search down to only `pmed` files that are also `.txt`.
+It narrows the search down to only `pmed` files that are also `.txt` so that you don't have your 
+screen flooded with unecessary files
