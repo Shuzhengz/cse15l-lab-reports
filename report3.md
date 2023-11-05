@@ -26,7 +26,7 @@ public void testReverseInPlaceTest() {
 ```
 
 The test fails and outputs `[7, 6, 5, 6, 7]` instead  of the expected `[7, 6, 5, 4, 3]` with
-error:
+output:
 
 ```
 arrays first differed at element [3]; 
@@ -111,6 +111,7 @@ static void reverseInPlace(int[] arr) {
     }
 }
 ```
+### Explanation
 
 The fix used a new temporary array that is a clone of the original array, and then assigned the
 old array with the contents of the temp array in reverse. This fixed the bug that the original
@@ -118,3 +119,50 @@ code has, which is that it overrides itself for every operation it does in rever
 half of the data that it had, resulting in only half of the array being reversed, which the other
 half is unchanged. The fix works because it no longer loses data when rewriting the contents of 
 the array, since the temp array is never being written to, and is declared as a constant.
+
+## Part 2
+
+I found the commands using the `man grep` and `grep --help` commands, and its
+[offical documentation](https://www.gnu.org/software/grep/manual/) from GNU
+
+### `grep -H` command
+
+The `-H` flag is the same as `--with-filename`, which prints file names with output lines
+
+For example, running the command for word _"observational"_ in all `.txt` files in `technical/plos`
+gives:
+
+```
+[zsz@fedora technical]$ grep -H "observational" plos/*.txt
+plos/journal.pbio.0020420.txt:        observational, comparative, theoretical) and taxonomic systems.
+plos/pmed.0020061.txt:        complete. Using observational studies to disentangle the adverse consequences of a single
+plos/pmed.0020180.txt:        feel it is a reasonable approach to this dilemma until larger, prospective observational
+plos/pmed.0020181.txt:        Randomized trials and observational studies have conclusively shown a marked improvement
+plos/pmed.0020181.txt:        These results are closely consistent with observational data linking weight gain to
+plos/pmed.0020195.txt:        are not negligible. Until larger prospective observational studies have been conducted,
+plos/pmed.0020206.txt:        Working with several colleagues, I initiated an observational study to analyze the ways
+plos/pmed.0020231.txt:        controlled trials, large observational studies (some prospective) suggest that this diet
+```
+
+We can also narrow the search down with the `\>` option at the end of the word, for example, 
+running the command:
+
+`grep -H "rvational\>" plos/*.txt` 
+
+would give all `.txt` files in `plos/` that have words **ending** in _"rvational"_:
+
+```
+[zsz@fedora technical]$ grep -H "vational\>" plos/*.txt
+plos/journal.pbio.0020404.txt:        motivational behavior, especially feeding behavior. It is lodged primarily in the lateral
+plos/journal.pbio.0020420.txt:        observational, comparative, theoretical) and taxonomic systems.
+plos/pmed.0010052.txt:        the same forces that have made millionaires out of motivational speakers and diet book
+plos/pmed.0020061.txt:        complete. Using observational studies to disentangle the adverse consequences of a single
+plos/pmed.0020180.txt:        feel it is a reasonable approach to this dilemma until larger, prospective observational
+plos/pmed.0020181.txt:        Randomized trials and observational studies have conclusively shown a marked improvement
+plos/pmed.0020181.txt:        These results are closely consistent with observational data linking weight gain to
+plos/pmed.0020195.txt:        are not negligible. Until larger prospective observational studies have been conducted,
+plos/pmed.0020206.txt:        Working with several colleagues, I initiated an observational study to analyze the ways
+plos/pmed.0020231.txt:        controlled trials, large observational studies (some prospective) suggest that this diet
+```
+
+Words like _"motivational"_ are now also inlcuded in the search.
