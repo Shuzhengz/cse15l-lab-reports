@@ -95,9 +95,27 @@ process is the same with example 1.
 
 ![Private_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-18.png)
 
+Contents of `id_rsa.pub`: 
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
+oQk3WdM+SfU1TyGoMC0l8qsNfLnz+MoC/DIaS4ErQb/ET8RIgWZ97U4wjSKRXneKkfD8ivprFpm9
+(..., shortened for security)UupVlx85kIxGWSKlQ/w3VIjjtFpn2jqbVTgzqIGIT1qp33Tt
+6cjRi+X1k6k0k7Stc53NRwBApb4oPfC+wyFfsfPK7kMFk9FBisAP9NrODYmIDVuH0= zsz@fedora
+```
+
 ### Path to public key:
 
 ![Public_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-46.png)
+
+Contents of `authorized_keys`:
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
+oQk3WdM+SfU1TyGoMC0l8qsNfLnz+MoC/DIaS4ErQb/ET8RIgWZ97U4wjSKRXneKkfD8ivprFpm9
+(..., shortened for security)UupVlx85kIxGWSKlQ/w3VIjjtFpn2jqbVTgzqIGIT1qp33Tt
+6cjRi+X1k6k0k7Stc53NRwBApb4oPfC+wyFfsfPK7kMFk9FBisAP9NrODYmIDVuH0= zsz@fedora
+```
 
 ### Logging into `ieng6` with ssh:
 
