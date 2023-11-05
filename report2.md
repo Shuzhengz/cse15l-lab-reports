@@ -99,7 +99,6 @@ Contents of `id_rsa.pub`:
 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
-oQk3WdM+SfU1TyGoMC0l8qsNfLnz+MoC/DIaS4ErQb/ET8RIgWZ97U4wjSKRXneKkfD8ivprFpm9
 (..., shortened for security)UupVlx85kIxGWSKlQ/w3VIjjtFpn2jqbVTgzqIGIT1qp33Tt
 6cjRi+X1k6k0k7Stc53NRwBApb4oPfC+wyFfsfPK7kMFk9FBisAP9NrODYmIDVuH0= zsz@fedora
 ```
@@ -112,7 +111,6 @@ Contents of `authorized_keys`:
 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
-oQk3WdM+SfU1TyGoMC0l8qsNfLnz+MoC/DIaS4ErQb/ET8RIgWZ97U4wjSKRXneKkfD8ivprFpm9
 (..., shortened for security)UupVlx85kIxGWSKlQ/w3VIjjtFpn2jqbVTgzqIGIT1qp33Tt
 6cjRi+X1k6k0k7Stc53NRwBApb4oPfC+wyFfsfPK7kMFk9FBisAP9NrODYmIDVuH0= zsz@fedora
 ```
