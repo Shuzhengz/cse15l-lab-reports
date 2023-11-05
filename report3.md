@@ -166,3 +166,44 @@ plos/pmed.0020231.txt:        controlled trials, large observational studies (so
 ```
 
 Words like _"motivational"_ are now also inlcuded in the search.
+
+### `grep -C` command
+
+The `-C` flag is the same as `--context=NUM`, which prints _NUM_ lines of output context
+
+For example, to see 2 lines around the word _"observational"_ in `plos/pmed.0020061.txt`, we 
+would run:
+
+```
+[zsz@fedora technical]$ grep -C 2 "observational" plos/pmed.0020061.txt
+        standard” for detecting subtle effects of environmental toxins on humans. But
+        epidemiological studies are expensive to mount, difficult to execute, and take years to
+        complete. Using observational studies to disentangle the adverse consequences of a single
+        toxin from other environmental influences and to promulgate regulations is a difficult and
+        painfully slow process. There is also a financial disincentive for chemical registrants to
+```
+
+Which prints two lines of context above and below the word.
+
+We can also run it when there are multiple matching word, in that case, the command would print 2 
+extra linex above and below blocks of text that contains mutiple of the same word:
+
+```
+[zsz@fedora technical]$ grep -C 2 "this" plos/pmed.0020061.txt
+        Council, the chemical manufacturer's trade association, to provide basic toxicity screening
+        tests for the high-production-volume chemicals by 2005
+        (http://www.epa.gov/chemrtk/volchall.htm), but this is voluntary.
+        For new pesticides intended for use on food crops—one of the areas in which regulations
+        are most stringent—regulations require only that DNT testing be evaluated for substances
+--
+        potential DNT prior to their registration and use [49]. For pesticides—which undergo more
+        premarket testing than other chemicals—the EPA has relied on a tiered system of toxicity
+        testing. The assumption underlying this system is that positive findings on earlier, more
+        basic tests of neurotoxicity in adult animals will “trigger” the EPA to request more
+        extensive testing by manufacturers, including tests in immature animals. Unfortunately,
+        this tiered process has failed to result in appropriate DNT testing. In 1998, an internal
+        EPA Toxicology Working Group concluded that these triggers may not be sufficient to
+        identify all chemicals that have the potential to produce DNT [75]. Moreover, this tiered
+        system discourages industry from conducting testing in immature animals because the
+        findings could necessitate further costly testing and hinder a chemical from reaching the
+```
