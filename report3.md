@@ -2,7 +2,7 @@
 
 ## Part 1
 
-For the bug in `reverseInPlace()` in `ArrayExamples`:
+### For the bug in `reverseInPlace()` in `ArrayExamples`:
 
 Code:
 
@@ -14,7 +14,7 @@ static void reverseInPlace(int[] arr) {
 }
 ```
 
-Junit Test with test input of array `[3, 4, 5, 6, 7]`:
+### Failed Junit Test with test input of array `[3, 4, 5, 6, 7]`:
 
 ```java
 @Test
@@ -25,7 +25,8 @@ public void testReverseInPlaceTest() {
 }
 ```
 
-The test fails and outputs `[7, 6, 5, 6, 7]` instead  of the expected [7, 6, 5, 4, 3] with error:
+The test fails and outputs `[7, 6, 5, 6, 7]` instead  of the expected `[7, 6, 5, 4, 3]` with
+error:
 
 ```
 arrays first differed at element [3]; 
@@ -40,7 +41,8 @@ Actual   :6
 	at org.junit.Assert.assertArrayEquals(Assert.java:418)
 	at org.junit.Assert.assertArrayEquals(Assert.java:429)
 	at ArrayTests.testReverseInPlaceTest(ArrayTests.java:24)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invok
+    (DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
@@ -70,7 +72,8 @@ Caused by: java.lang.AssertionError: expected:<4> but was:<6>
 	at org.junit.Assert.failNotEquals(Assert.java:835)
 	at org.junit.Assert.assertEquals(Assert.java:120)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at org.junit.internal.ExactComparisonCriteria.assertElementsEqual(ExactComparisonCriteria.java:8)
+	at org.junit.internal.ExactComparisonCriteria.assertElementsEqual(ExactComparisonCriteria
+    java:8)
 	at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:76)
 	... 30 more
 
@@ -78,7 +81,7 @@ Caused by: java.lang.AssertionError: expected:<4> but was:<6>
 Process finished with exit code 255
 ```
 
-Input that does not induce a failure, an array of `[1]`:
+### Junit test of input that does not induce a failure, an array of `[1]`:
 
 ```java
 @Test
@@ -95,12 +98,13 @@ With output:
 Process finished with exit code 0
 ```
 
+This is because the array has length of `1`, so there is no data to be lost.
 
-Fixed code vs original code:
+### Fixed code vs original code:
 
 ```diff
 static void reverseInPlace(int[] arr) {
-+   int[] tempArray = arr.clone();
++   final int[] tempArray = arr.clone();
     for (int i = 0; i < arr.length; i += 1) {
 -       arr[i] = arr[arr.length - i - 1];
 +       arr[i] = tempArray[arr.length - i - 1];
@@ -112,4 +116,5 @@ The fix used a new temporary array that is a clone of the original array, and th
 old array with the contents of the temp array in reverse. This fixed the bug that the original
 code has, which is that it overrides itself for every operation it does in reverse, so it loses
 half of the data that it had, resulting in only half of the array being reversed, which the other
-half is unchanged.
+half is unchanged. The fix works because it no longer loses data when rewriting the contents of 
+the array, since the temp array is never being written to, and is declared as a constant.
