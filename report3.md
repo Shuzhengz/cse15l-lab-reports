@@ -207,3 +207,40 @@ extra linex above and below blocks of text that contains mutiple of the same wor
         system discourages industry from conducting testing in immature animals because the
         findings could necessitate further costly testing and hinder a chemical from reaching the
 ```
+
+### `grep -L` command
+
+The `-L` flag is the same as `--files-without-match`, which prints only names of FILEs with no 
+selected line
+
+For example, running the `-L` flag on all `.txt` in `plos/` with the word _"this"_ gives all the 
+files that do not contain the word:
+
+```
+[zsz@fedora technical]$ grep -L "this" plos/*.txt
+plos/pmed.0010030.txt
+plos/pmed.0010050.txt
+plos/pmed.0020019.txt
+plos/pmed.0020027.txt
+plos/pmed.0020028.txt
+plos/pmed.0020048.txt
+plos/pmed.0020065.txt
+plos/pmed.0020086.txt
+plos/pmed.0020120.txt
+plos/pmed.0020145.txt
+plos/pmed.0020149.txt
+plos/pmed.0020189.txt
+plos/pmed.0020195.txt
+plos/pmed.0020226.txt
+```
+
+The search however also includes parts of the word, so running:
+
+```
+[zsz@fedora technical]$ grep -L "x" plos/*.txt
+plos/pmed.0020192.txt
+plos/pmed.0020226.txt
+plos/pmed.0020274.txt
+```
+
+would give all files that does not contain the character _"x"_
