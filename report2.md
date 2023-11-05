@@ -95,7 +95,7 @@ process is the same with example 1.
 
 ![Private_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-18.png)
 
-Contents of `id_rsa.pub`: 
+Contents of `home/zsz/.ssh/id_rsa.pub`: 
 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
@@ -107,7 +107,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
 
 ![Public_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-46.png)
 
-Contents of `authorized_keys`:
+Contents of `~/.ssh/authorized_keys`:
 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
