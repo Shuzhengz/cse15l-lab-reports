@@ -14,7 +14,7 @@ static void reverseInPlace(int[] arr) {
 }
 ```
 
-Junit Test with test input of array `{3, 4, 5, 6, 7}`:
+Junit Test with test input of array `[3, 4, 5, 6, 7]`:
 
 ```java
 @Test
@@ -25,7 +25,7 @@ public void testReverseInPlaceTest() {
 }
 ```
 
-The test fails and outputs `[7, 6, 5, 6, 7]` instead with error:
+The test fails and outputs `[7, 6, 5, 6, 7]` instead  of the expected [7, 6, 5, 4, 3] with error:
 
 ```
 arrays first differed at element [3]; 
@@ -77,3 +77,39 @@ Caused by: java.lang.AssertionError: expected:<4> but was:<6>
 
 Process finished with exit code 255
 ```
+
+Input that does not induce a failure, an array of `[1]`:
+
+```java
+@Test
+public void testReverseInPlaceTestNoError() {
+    int[] input1 = {1};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{1}, input1);
+}
+```
+
+With output:
+
+```
+Process finished with exit code 0
+```
+
+
+Fixed code vs original code:
+
+```diff
+static void reverseInPlace(int[] arr) {
++   int[] tempArray = arr.clone();
+    for (int i = 0; i < arr.length; i += 1) {
+-       arr[i] = arr[arr.length - i - 1];
++       arr[i] = tempArray[arr.length - i - 1];
+    }
+}
+```
+
+The fix used a new temporary array that is a clone of the original array, and then assigned the
+old array with the contents of the temp array in reverse. This fixed the bug that the original
+code has, which is that it overrides itself for every operation it does in reverse, so it loses
+half of the data that it had, resulting in only half of the array being reversed, which the other
+half is unchanged.
