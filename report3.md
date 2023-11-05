@@ -244,3 +244,55 @@ plos/pmed.0020274.txt
 ```
 
 would give all files that does not contain the character _"x"_
+
+### `grep -l`
+
+The `-l` flag is the same as `--files-with-match`, which is the opposite of "-L" command and 
+prints only names of FILEs with selected line
+
+For example, running the `-L` flag on all `.txt` in `plos/` with the word _"observation"_ gives 
+all the files that contain the word:
+
+```
+[zsz@fedora technical]$ grep -l -w "observation" plos/*.txt
+plos/journal.pbio.0020019.txt
+plos/journal.pbio.0020046.txt
+plos/journal.pbio.0020054.txt
+plos/journal.pbio.0020125.txt
+plos/journal.pbio.0020187.txt
+plos/journal.pbio.0020206.txt
+plos/journal.pbio.0020215.txt
+plos/journal.pbio.0020241.txt
+plos/journal.pbio.0020297.txt
+plos/journal.pbio.0020302.txt
+plos/journal.pbio.0020337.txt
+plos/journal.pbio.0020346.txt
+plos/journal.pbio.0020401.txt
+plos/journal.pbio.0020439.txt
+plos/pmed.0010066.txt
+plos/pmed.0020018.txt
+plos/pmed.0020045.txt
+plos/pmed.0020067.txt
+plos/pmed.0020103.txt
+plos/pmed.0020123.txt
+plos/pmed.0020150.txt
+plos/pmed.0020246.txt
+```
+
+Note that I used the `-w` flag here that limits the search to only files that contain _"observation"_ as its own word
+
+We can also run the same command but with `pmed.*.txt`
+
+```
+[zsz@fedora technical]$ grep -l -w "observation" plos/pmed.*.txt
+plos/pmed.0010066.txt
+plos/pmed.0020018.txt
+plos/pmed.0020045.txt
+plos/pmed.0020067.txt
+plos/pmed.0020103.txt
+plos/pmed.0020123.txt
+plos/pmed.0020150.txt
+plos/pmed.0020246.txt
+```
+
+It narrows the search down to only `pmed` files that are also `.txt`.
