@@ -156,6 +156,9 @@ plos/pmed.0020206.txt:        Working with several colleagues, I initiated an ob
 plos/pmed.0020231.txt:        controlled trials, large observational studies (some prospective) suggest that this diet
 ```
 
+This gives all files with the word in the scope, and also showing the file name and the relative
+path. This is useful when you want to know exactly which file the thing you are looking for is in.
+
 We can also narrow the search down with the `\>` option at the end of the word, for example, 
 running the command:
 
@@ -177,7 +180,10 @@ plos/pmed.0020206.txt:        Working with several colleagues, I initiated an ob
 plos/pmed.0020231.txt:        controlled trials, large observational studies (some prospective) suggest that this diet
 ```
 
-Words like _"motivational"_ are now also inlcuded in the search.
+Words like _"motivational"_ are now also inlcuded in the search. This is useful because the
+`-H` command by default gives only the result with the exact word match, and using either
+`\>` or `\<`, depending on what part of the word you searched, we can search for matches with
+parts of a word.
 
 ### `grep -C` command
 
@@ -195,7 +201,8 @@ would run:
         painfully slow process. There is also a financial disincentive for chemical registrants to
 ```
 
-Which prints two lines of context above and below the word.
+Which prints two lines of context above and below the word. This is useful when you want to show 
+the context that the word is in, and to make sure that you got the file that you wanted.
 
 We can also run it when there are multiple matching word, in that case, the command would print 2 
 extra linex above and below blocks of text that contains mutiple of the same word:
@@ -220,7 +227,10 @@ extra linex above and below blocks of text that contains mutiple of the same wor
         findings could necessitate further costly testing and hinder a chemical from reaching the
 ```
 
-This command is very useful in finding the context of the word being used
+In this case, because there are multiple matching words very close to each other, the command
+grouped them into one block. This command is very useful in finding the context of the word being
+used, and because usually the matching word is colored in the terminal, it is very obvious to see
+when multiple matches are present in one block.
 
 ### `grep -L` command
 
@@ -259,7 +269,8 @@ plos/pmed.0020274.txt
 ```
 
 would give all files that does not contain the character _"x"_. To narraow the search down to 
-exact words, use the `-w` flag in front of the word to be searched
+exact words, use the `-w` flag in front of the word to be searched, and it is useful when you
+want to search for exact matching words.
 
 ### `grep -l`
 
@@ -313,5 +324,5 @@ plos/pmed.0020150.txt
 plos/pmed.0020246.txt
 ```
 
-It narrows the search down to only `pmed` files that are also `.txt` so that you don't have your 
-screen flooded with unecessary files
+It narrows the search down to only `pmed` files that are also `.txt`, and it is useful because you
+wouldn't have your screen flooded with unecessary files
