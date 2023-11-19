@@ -102,12 +102,23 @@ This is because the array has length of `1`, so there is no data to be lost.
 
 ### Fixed code vs original code:
 
-```diff
+Original Code:
+
+```java
 static void reverseInPlace(int[] arr) {
-+   final int[] tempArray = arr.clone();
+    for(int i = 0; i < arr.length; i += 1) {
+        arr[i] = arr[arr.length - i - 1];
+    }
+}
+```
+
+Fixed Code:
+
+```java
+static void reverseInPlace(int[] arr) {
+    final int[] tempArray = arr.clone();
     for (int i = 0; i < arr.length; i += 1) {
--       arr[i] = arr[arr.length - i - 1];
-+       arr[i] = tempArray[arr.length - i - 1];
+        arr[i] = tempArray[arr.length - i - 1];
     }
 }
 
