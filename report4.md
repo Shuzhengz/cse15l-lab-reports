@@ -91,3 +91,13 @@ Then we can save and leave vim using `<:><w><q>`. `<:>` allows you to enter comm
 the file to disk, and `<q>` quits vim
 
 ![command line](images/Screenshot%20from%202023-11-19%2021-58-13.png)
+
+## Step 8
+
+To run the tests, we run the script again
+
+Keys pressed: `<b><a><s><h><space><t><e><tab><enter>`
+
+![test 2](images/Screenshot%20from%202023-11-19%2022-01-56.png)
+
+This time there is no test that failed, and the program is fixed
