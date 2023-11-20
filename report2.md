@@ -56,7 +56,7 @@ class StringServer {
 
 ### Example 1
 
-![Example_Image_1](report2_images/Screenshot%20from%202023-10-22%2016-05-36.png)
+![Example_Image_1](images/Screenshot%20from%202023-10-22%2016-05-36.png)
 
 Here the program called the `handleRequest()` method to run through the url
 provided. It adds the string _hello_ the first time and then _hello_again_ the
@@ -76,7 +76,7 @@ inside it.
 
 ### Example 2
 
-![Example_Image_2](report2_images/Screenshot%20from%202023-10-22%2016-05-51.png)
+![Example_Image_2](images/Screenshot%20from%202023-10-22%2016-05-51.png)
 
 Starting off from the last example, I used `/add-message` and added another value, 
 `hello_again_again`, to the server, and then I entered the URL for the index 
@@ -93,7 +93,7 @@ process is the same with example 1.
 
 ### Path to private key:
 
-![Private_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-18.png)
+![Private_Key](images/Screenshot%20from%202023-10-22%2016-31-18.png)
 
 Contents of `home/zsz/.ssh/id_rsa.pub`: 
 
@@ -105,7 +105,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
 
 ### Path to public key:
 
-![Public_Key](report2_images/Screenshot%20from%202023-10-22%2016-31-46.png)
+![Public_Key](images/Screenshot%20from%202023-10-22%2016-31-46.png)
 
 Contents of `~/.ssh/authorized_keys`:
 
@@ -117,7 +117,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLuDV+yWdA4Z1j+TbVUA/ecuucT1ikJWG7pEkQ
 
 ### Logging into `ieng6` with ssh:
 
-![login](report2_images/Screenshot%20from%202023-10-22%2016-32-12.png)
+![login](images/Screenshot%20from%202023-10-22%2016-32-12.png)
 
 ## Part 3
 
