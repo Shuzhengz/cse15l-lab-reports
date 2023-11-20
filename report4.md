@@ -101,3 +101,37 @@ Keys pressed: `<b><a><s><h><space><t><e><tab><enter>`
 ![test 2](images/Screenshot%20from%202023-11-19%2022-01-56.png)
 
 This time there is no test that failed, and the program is fixed
+
+## Step 9
+
+First see the changes to be added using `git status`
+
+Key pressed:`<g><i><t><space><s><t><a><t><tab><enter>`
+
+![git status](images/Screenshot%20from%202023-11-19%2022-05-26.png)
+
+We can then add and commit the changes using
+
+```
+git commit -a -m "fix merge bug"
+```
+
+Key pressed: `<g><i><t><space><c><o><m><tab><-><a><space><-><m><space>`, this uses the `commit` 
+command for `git` with flags `a` that adds all changes, and `m` that adds a message
+
+Then we add the message with `<"><f><i><x><space><m><e><r><g><e><space><b><u><g><"><enter>`, which
+also executes the command
+
+![commit](images/Screenshot%20from%202023-11-19%2022-10-12.png)
+
+Then push the changes to the fork by running
+
+```
+git push origin main
+```
+
+Where `origin` is the remote (default remote is origin) and `main` is the branch
+
+Key pressed: `<g><i><t><space><p><u><s><tab><o><tab><m><tab><enter>`
+
+![git push](images/Screenshot%20from%202023-11-19%2022-12-56.png)
