@@ -58,3 +58,36 @@ Keys pressed: `<b><a><s><h><space><t><e><tab><enter>`
 
 This runs the tests for the program. We can see that there is 1 failure in the 2 tests that were 
 run, and the location for the exception.
+
+## Step 7
+
+To edit the file with `vim`
+
+Key pressed: `<v><i><m><space><L><tab><.><tab><enter>`, this runs vim on the `ListExamples.java`
+file.
+
+![vim](images/Screenshot%20from%202023-11-19%2021-45-32.png)
+
+Navigate to the error code in vim by typing out the number in normal mode, we already know that
+it is on line 44
+
+Key pressed: `<:><4><4><enter>`. This navigates the crusor to the start of line 44
+
+![vim](images/Screenshot%20from%202023-11-19%2021-50-33.png)
+
+To change the index from 1 to 2, navigate to the end of the word `index1`
+
+Key pressed: `(hold)<shift><right>(release hold)<left>`. Holding down the shift key will navigate
+by word instead of by columns
+
+Then I entered edit mode and changed `index1` to `index2`
+
+Key pressed:`<i><backspace><2><ctrl-c>`. `<i>` enters edit mode and `<ctrl-c>` exits into normal
+mode
+
+![vim](images/Screenshot%20from%202023-11-19%2021-56-09.png)
+
+Then we can save and leave vim using `<:><w><q>`. `<:>` allows you to enter commands, `<w>` writes
+the file to disk, and `<q>` quits vim
+
+![command line](images/Screenshot%20from%202023-11-19%2021-58-13.png)
