@@ -170,3 +170,19 @@ an error message, and then keeps running as usual.
 
 It also fixes the third input case that is not tested becuase the program never reached there, that
 string 3 does not exist in string 2, and will also handle it properly.
+
+## Part 2
+
+I didn't know that you can use plugins to make `nvim` look very good with a tiling windows manager
+before.
+
+I was searching for `vim` in my package manager when I saw `Neovim` as an option. Out of curiocity
+I searched it up, and it seems to be a more customizable version of `vim`, which was pretty cool,
+so I installed it. It turns out that most of the features for `nvim` can be achieved by adding
+things in its `.config` file, and it is possible to customize the looks and function of the editor
+to make it more like an IDE. So I followed resources and instructions online like 
+[this one](https://github.com/crivotz/nv-ide) to customize it:
+
+![example](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_1.png)
+
+(This screenshot is from the GitHub repo I linked, I'm still working on setting it up on my machine)
