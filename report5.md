@@ -186,3 +186,4 @@ to make it more like an IDE. So I followed resources and instructions online lik
 ![example](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_1.png)
 
 (This screenshot is from the GitHub repo I linked, I'm still working on setting it up on my machine)
+Link: https://github.com/crivotz/nv-ide
