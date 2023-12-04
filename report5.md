@@ -77,4 +77,3 @@ It seems like that the error is caused by checking the index from something to s
 what it is doing on the first string instead of the second. The input `sp` does actually look like
 that it is not valid, because the first string does not have the words this long. Catching this 
 throwable in the code would fix the issue as the `jdb` output suggested.
-
